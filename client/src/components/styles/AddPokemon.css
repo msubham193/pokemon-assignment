@@ -1,0 +1,24 @@
+.add-pokemon {
+  padding: 20px;
+}
+
+.add-pokemon input,
+.add-pokemon select {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.add-pokemon button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.add-pokemon button:hover {
+  background-color: #218838;
+}

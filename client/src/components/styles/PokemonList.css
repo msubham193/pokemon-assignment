@@ -1,0 +1,51 @@
+
+.pokemon-list {
+  margin-top: 20px;
+}
+
+.pokemon-list h2 {
+  margin-bottom: 20px;
+}
+
+.pokemon-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pokemon-list th,
+.pokemon-list td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.pokemon-list th {
+  background-color:"black";
+  font-weight: bold;
+}
+
+.pokemon-list tr:nth-child(even) {
+  background-color: "black";
+}
+
+.action-button {
+  margin-right: 5px;
+  padding: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.action-button.add {
+  color: #28a745;
+}
+.action-button.edit {
+  color: #ffc107;
+}
+.action-button.delete {
+  color: #dc3545;
+}
+
+.action-button:hover {
+  opacity: 0.7;
+}

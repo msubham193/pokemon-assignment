@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "id": "1723027305268",
+      "pokemonOwnerName": "Dragon",
+      "pokemon": [
+        {
+          "id": "1723027305268",
+          "pokemonName": "weedle",
+          "pokemonAbility": "shield-dust",
+          "initialPositionX": 67,
+          "initialPositionY": 45,
+          "speed": 6,
+          "direction": "W"
+        },
+        {
+          "id": "1723027365022",
+          "pokemonName": "ivysaur",
+          "pokemonAbility": "overgrow",
+          "initialPositionX": 78,
+          "initialPositionY": 99,
+          "speed": 10,
+          "direction": "S"
+        },
+        {
+          "id": "1723027738376",
+          "pokemonName": "nidoking",
+          "pokemonAbility": "rivalry",
+          "initialPositionX": 100,
+          "initialPositionY": 200,
+          "speed": 4,
+          "direction": "N"
+        }
+      ]
+    }
+  ]
+}
