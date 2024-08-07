@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Edit, Trash, Plus } from "lucide-react";
@@ -6,7 +5,7 @@ import "./styles/PokemonList.css";
 import { useNavigate } from "react-router-dom";
 import PokemonPopup from "./PokemonPopUp";
 
-
+const BASE_URL = "https://pokemon-assignment-3qim.onrender.com";
 const PokemonList = () => {
   const [users, setUsers] = useState([]);
   const [selectedUserPokemons, setSelectedUserPokemons] = useState([]);
@@ -19,7 +18,7 @@ const PokemonList = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/users");
+      const response = await axios.get(`${BASE_URL}/api/users`);
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -28,7 +27,7 @@ const PokemonList = () => {
 
   const handleDeleteUser = async (userId) => {
     try {
-      await axios.delete(`http://localhost:3000/api/users/${userId}`);
+      await axios.delete(`${BASE_URL}/api/users/${userId}`);
       setUsers(users.filter((user) => user.id !== userId));
     } catch (error) {
       console.error("Error deleting user:", error);
@@ -38,7 +37,7 @@ const PokemonList = () => {
   const handleEditUser = async (userId) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/pokemon/user/${userId}`
+        `${BASE_URL}/api/pokemon/user/${userId}`
       );
       setSelectedUserPokemons(response.data);
       setSelectedUserId(userId);

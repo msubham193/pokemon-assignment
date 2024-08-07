@@ -1,8 +1,9 @@
 import toast from "react-hot-toast";
 
+const BASE_URL = "https://pokemon-assignment-3qim.onrender.com";
 export const fetchPokemonNames = async (setPokemonNames) => {
   try {
-    const response = await fetch("http://localhost:3000/api/pokemon/names");
+    const response = await fetch(`${BASE_URL}/api/pokemon/names`);
     const data = await response.json();
     setPokemonNames(data);
   } catch (error) {
@@ -16,9 +17,7 @@ export const fetchPokemonAbilities = async (
   setPokemonAbility
 ) => {
   try {
-    const response = await fetch(
-      `http://localhost:3000/api/pokemon/abilities/${name}`
-    );
+    const response = await fetch(`${BASE_URL}/api/pokemon/abilities/${name}`);
     const data = await response.json();
     setPokemonAbilities(data);
     if (data.length === 1) {
@@ -33,7 +32,7 @@ export const fetchPokemonAbilities = async (
 
 export const fetchUsers = async (setUsers) => {
   try {
-    const response = await fetch("http://localhost:3000/api/users");
+    const response = await fetch(`${BASE_URL}/api/users`);
     const data = await response.json();
     setUsers(data);
   } catch (error) {

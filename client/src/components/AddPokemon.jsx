@@ -7,7 +7,7 @@ import {
   fetchPokemonAbilities,
   handleSubmit,
 } from "../utils/pokemonUtils";
-
+const BASE_URL = "https://pokemon-assignment-3qim.onrender.com";
 const AddPokemon = () => {
   const params = useParams();
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ const AddPokemon = () => {
   const fetchPokemonData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/pokemon/users/${params.userId}/${params.pokemonId}`
+        `${BASE_URL}/api/pokemon/users/${params.userId}/${params.pokemonId}`
       );
       const data = await response.json();
       setPokemonName(data.pokemonName);
@@ -56,8 +56,8 @@ const AddPokemon = () => {
     handleSubmit(
       e,
       isUpdating
-        ? `http://localhost:3000/api/pokemon/users/${params.userId}/${params.pokemonId}`
-        : `http://localhost:3000/api/pokemon/users/${params.id}/pokemon`,
+        ? `${BASE_URL}/api/pokemon/users/${params.userId}/${params.pokemonId}`
+        : `${BASE_URL}/api/pokemon/users/${params.id}/pokemon`,
       isUpdating ? "PUT" : "POST",
       {
         pokemonName,

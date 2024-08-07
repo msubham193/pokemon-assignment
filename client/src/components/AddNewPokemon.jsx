@@ -9,6 +9,8 @@ import {
   handleSubmit,
 } from "../utils/pokemonUtils";
 
+const BASE_URL = "https://pokemon-assignment-3qim.onrender.com";
+
 const AddNewPokemon = () => {
   const params = useParams();
   const [users, setUsers] = useState([]);
@@ -30,7 +32,7 @@ const AddNewPokemon = () => {
   const onSubmit = (e) => {
     handleSubmit(
       e,
-      `http://localhost:3000/api/pokemon/users/${selectedUser}/pokemon`,
+      `${BASE_URL}/api/pokemon/users/${selectedUser}/pokemon`,
       "POST",
       {
         pokemonName,

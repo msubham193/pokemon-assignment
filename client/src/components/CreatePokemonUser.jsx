@@ -6,7 +6,7 @@ import {
   fetchPokemonAbilities,
   handleSubmit,
 } from "../utils/pokemonUtils";
-
+const BASE_URL = "https://pokemon-assignment-3qim.onrender.com";
 const CreatePokemonUser = () => {
   const [pokemonOwnerName, setPokemonOwnerName] = useState("");
   const [pokemonNames, setPokemonNames] = useState([]);
@@ -25,7 +25,7 @@ const CreatePokemonUser = () => {
   const onSubmit = (e) => {
     handleSubmit(
       e,
-      `http://localhost:3000/api/pokemon/users/${pokemonOwnerName}/pokemon`,
+      `${BASE_URL}/api/pokemon/users/${pokemonOwnerName}/pokemon`,
       "POST",
       {
         pokemonName,
@@ -112,7 +112,7 @@ const CreatePokemonUser = () => {
       />
       <input
         type="text"
-         placeholder="Direction in W,E,N,S"
+        placeholder="Direction in W,E,N,S"
         value={direction}
         onChange={(e) => setDirection(e.target.value)}
       />

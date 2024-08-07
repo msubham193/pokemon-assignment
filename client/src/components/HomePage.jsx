@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 import { Play, AlertTriangle, Pause } from "lucide-react";
 import "./styles/HomePage.css";
-
+const BASE_URL = "https://pokemon-assignment-3qim.onrender.com";
 const HomePage = () => {
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState("");
@@ -18,7 +18,7 @@ const HomePage = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/users");
+      const response = await fetch(`${BASE_URL}/api/users`);
       const data = await response.json();
       setUsers(data);
     } catch (error) {
@@ -30,9 +30,7 @@ const HomePage = () => {
     const userId = e.target.value;
     setSelectedUser(userId);
     try {
-      const response = await fetch(
-        `http://localhost:3000/api/pokemon/user/${userId}`
-      );
+      const response = await fetch(`${BASE_URL}/api/pokemon/user/${userId}`);
       const data = await response.json();
       setUserPokemons(data);
     } catch (error) {
